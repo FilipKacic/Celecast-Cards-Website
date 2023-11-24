@@ -1,0 +1,169 @@
+/*variables*/
+:root {
+    /*theGameCrafter colors for the buy button*/
+    --tgc1: #bbd329;
+    --tgc2: #d0e550;
+    --tgc3: #1e7e34;
+    /*custom colors*/
+    --yellow: yellow;
+    --lightBlue: cyan;
+    --purple: magenta;
+    --black: black;
+    --darkGray: rgb(64, 64, 64);
+    --gray: rgb(128, 128, 128);
+    --lightGray: rgb(192, 192, 192);
+    --white: white;
+    /*custom sizes*/
+    --big: 2rem;
+    --medium: 1rem;
+    --small: 0.5rem;
+    --imgH: 15rem;
+    --imgW: 100%;
+    --tableImh: 6rem;
+}
+body {font-family: "Book Antiqua", serif;}
+/*logo*/
+.logo {
+    background-image: linear-gradient(to right, var(--yellow), var(--lightBlue), var(--purple));
+    text-shadow: 0 0 var(--small) var(--black);
+    font-size: var(--big);
+    padding: var(--small);
+    text-align: center;
+}
+/*horizontal top navigation bar*/
+.hTopNavBar {
+    background-color: var(--black);
+    overflow: hidden;
+}
+.hTopNavBar a {
+    color: var(--white);
+    font-size: var(--medium);
+    padding: var(--small) var(--big);
+    text-decoration: none;
+    text-align: center;
+    float: left;
+}
+.hTopNavBar a:hover {background-color: var(--darkGray);}
+.currentPage {background-color: var(--darkGray);}
+/*buy button*/
+.buyButton {
+    margin-top: var(--small);
+    padding: var(--small); 
+    overflow: hidden;
+}
+.buyButton a {
+    background-color: var(--tgc1);
+    color:var(--black);
+    font-size: var(--big);
+    padding: var(--small) var(--medium);
+    border-radius: 0.3rem; /*theGameCrafter button border radius*/
+    text-decoration: none;
+    text-align: center;
+    float: left;
+    position: relative;
+    left: 50%;
+    translate: -50%;
+}
+.buyButton a:hover {background-color: var(--tgc2);}
+.buyButton a:active {background-color: var(--tgc3);}
+/*centered image*/
+.centeredImage {
+    margin-top: var(--small);
+    max-height: var(--imgH);
+    max-width: var(--imgW);
+    position: relative;
+    left: 50%;
+    translate: -50%;
+}
+/*cards*/
+.cards table {
+    background-color:var(--black);
+    margin: var(--small) 0 0 0;
+    position: relative;
+    left: 50%;
+    translate: -50%;
+}
+.cards table, th, td {
+    border: var(--small) solid;
+    border-color: var(--darkGray);
+    border-collapse: collapse;
+    font-size: var(--medium);
+    text-align: center;
+}
+.cards th {color: var(--white);}
+.cards tr:nth-child(3n-1) {color: var(--yellow);}
+.cards tr:nth-child(3n) {color: var(--lightBlue);}
+.cards tr:nth-child(3n+1) {color: var(--purple);}
+.cards img {
+    max-height: var(--tableImh);
+    max-width: var(--tableImh);
+    margin: 0.3rem 0.3rem 0 0.3rem;
+}
+.cards p {
+    margin: var(--small);
+    text-align: justify;
+}
+
+/*rules*/
+.rules {
+    background-color: lightgray;
+    border-color: var(--darkGray);
+    border-style: solid;
+    border-width: var(--small);
+    margin: var(--small) 25%;
+    padding: 0 var(--small);
+}
+.rules h1 {
+    color: var(--white);
+    text-shadow: 0 0 var(--small) var(--black);
+    font-size: var(--medium);
+    text-align: center;
+}
+.rules h2 {
+    color: var(--gray);
+    font-size: var(--medium);
+    text-align: left;
+}
+.rules h3 {
+    color: var(--black);
+    font-size: var(--medium);
+    text-align: left;
+}
+.rules p {
+    font-size: var(--medium);
+    text-align: justify;
+}
+.jump {
+    color: var(--black);
+    text-decoration: none;
+}
+.jump:hover {
+    background-color: var(--black);
+    color: var(--lightGray);
+}
+
+/*contact list*/
+.contactList {
+    background-color: var(--darkGray);
+    overflow: hidden;
+}
+.contactList a {
+    color: var(--white);
+    font-size: var(--medium);
+    padding: var(--small) var(--big);
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    float:left;
+    position: relative;
+    left: 50%;
+    translate: -50%;
+}
+.contactList a:hover {
+    background-color: var(--gray);
+    color: var(--white);
+}
+.contactList a:active {
+    background-color: var(--lightGray);
+    color: var(--black);
+}
