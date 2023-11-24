@@ -1,7 +1,5 @@
 /*variables*/
 :root {
-    /*dark mode destroys some elements*/
-    color-scheme: light only;
     /*theGameCrafter colors for the buy button*/
     --tgc1: #bbd329;
     --tgc2: #d0e550;
@@ -85,7 +83,6 @@ body {
     background-color:var(--black);
     margin: var(--small) 0 0 0;
     float: left;
-    table-layout: auto;
     width: 100%;
 }
 .cards table, th, td {
