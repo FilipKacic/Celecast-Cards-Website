@@ -1,5 +1,7 @@
 /*variables*/
 :root {
+    /*dark mode destroys some elements*/
+    color-scheme: only light;
     /*theGameCrafter colors for the buy button*/
     --tgc1: #bbd329;
     --tgc2: #d0e550;
