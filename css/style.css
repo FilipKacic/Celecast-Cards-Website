@@ -53,7 +53,6 @@ body {
 .currentPage {background-color: var(--darkGray);}
 /*buy button*/
 .buyButton {
-    margin-top: var(--small);
     padding: var(--small);
     overflow: hidden;
 }
