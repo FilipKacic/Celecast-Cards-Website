@@ -84,7 +84,6 @@ body {
 .cards table {
     background-color:var(--black);
     margin: var(--small) 0 0 0;
-    float: left;
     width: 100%;
 }
 .cards table, th, td {
