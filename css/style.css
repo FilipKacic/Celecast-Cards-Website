@@ -115,7 +115,6 @@ body {
     border-color: var(--darkGray);
     border-style: solid;
     border-width: var(--small);
-    margin: var(--small);
     padding: 0 var(--small);
 }
 .rules h1 {
