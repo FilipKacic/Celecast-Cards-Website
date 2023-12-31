@@ -26,6 +26,7 @@
 body {
     background-color: var(--white);
     font-family: "Book Antiqua", serif;
+    margin: 0px;
 }
 /*logo*/
 .logo {
@@ -49,7 +50,10 @@ body {
     text-align: center;
     float: left;
 }
-.hTopNavBar a:hover {background-color: var(--darkGray);}
+.hTopNavBar a:hover {
+    background-color: var(--darkGray);
+    transition: background-color 0.5s ease;
+}
 .currentPage {background-color: var(--darkGray);}
 /*buy button*/
 .buyButton {
@@ -82,7 +86,6 @@ body {
 /*cards*/
 .cards table {
     background-color:var(--black);
-    margin: var(--small) 0 0 0;
     width: 100%;
 }
 .cards table, th, td {
@@ -112,7 +115,7 @@ body {
     border-color: var(--darkGray);
     border-style: solid;
     border-width: var(--small);
-    margin: var(--small) 10%;
+    margin: var(--small);
     padding: 0 var(--small);
 }
 .rules h1 {
@@ -143,12 +146,14 @@ body {
 .jump:hover {
     background-color: var(--black);
     color: var(--lightGray);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /*contact list*/
 .contactList {
     background-color: var(--darkGray);
     overflow: hidden;
+    
 }
 .contactList a {
     color: var(--white);
@@ -159,6 +164,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 0.5s ease;
 }
 .contactList a:hover {
     background-color: var(--gray);
