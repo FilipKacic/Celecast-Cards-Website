@@ -35,7 +35,7 @@ body {
     text-shadow: 0 0 var(--small) var(--black);
     font-size: var(--big);
     padding: var(--small);
-    text-align: center;
+    text-align: left;
 }
 /*horizontal top navigation bar*/
 .hTopNavBar {
