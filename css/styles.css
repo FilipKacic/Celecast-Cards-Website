@@ -10,7 +10,6 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* prevent horizontal scrolling */
 }
 
 /* logo */
@@ -60,13 +59,14 @@ footer {
 
 /* table of cards */
 table {
-    border: 1em solid black;
+    border: 0.5em solid black;
     border-collapse: collapse;
     text-align: center;
     background-color: black;
     margin: 0;
     padding: 0;
     width: 100%;
+    max-width: 100%;
 }
 
 th {text-decoration: underline;}
@@ -83,7 +83,7 @@ table img {
 
 th:nth-child(6), td:nth-child(6) {
     text-align: justify;
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 
 th {color: white}
@@ -112,7 +112,7 @@ tr:nth-child(3n+1) {color: magenta;}
     display: block;
     margin: 1em auto;
     padding: 1em 2em;
-    width: 10%;
+    width: 8em;
     transition: background-color 0.3s ease;
 }
 
@@ -142,7 +142,6 @@ tr:nth-child(3n+1) {color: magenta;}
     display: flex;
     max-width: 32em;
     max-height: 32em;
-
 }
 
 /* contact */
