@@ -53,8 +53,8 @@ header a:hover {
 footer {
     color: white;
     text-shadow: 0 0 0.1em black;
-    opacity: 50%;
     text-align: center;
+    opacity: 0.3;
 }
 
 /* table of cards */
