@@ -10,6 +10,7 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* prevent horizontal scrolling */
 }
 
 /* logo */
@@ -17,9 +18,8 @@ header h1 {
     text-align: center;
     text-shadow: 0 0 0.1em black;
     background: linear-gradient(to right, yellow, cyan, magenta);
- 
     margin: 0;
-    padding: 0;
+    padding: 1em;
 }
 
 /* navigation */
@@ -42,7 +42,7 @@ header a {
     color: white;
     text-decoration: none;
     text-align: center;
-    padding: 0.5em;
+    padding: 1em;
     transition: background-color 0.3s ease;   
 }
 
@@ -94,6 +94,14 @@ tr:nth-child(3n+1) {color: magenta;}
 /* ids */
 #active {background-color: black;}
 
+/* home gif image */
+#home img {
+    display: block;
+    margin: 1em auto;
+    width: 8em;
+    height: 8em;
+}
+
 /*buy button*/
 #home a {
     color: black;
@@ -103,21 +111,13 @@ tr:nth-child(3n+1) {color: magenta;}
     text-decoration: none;   
     display: block;
     margin: 1em auto;
-    padding: 0.5em 1em;
+    padding: 1em 2em;
     width: 10%;
     transition: background-color 0.3s ease;
 }
 
 #home a:hover {background-color: #d0e550;} /* theGameCrafter color 2*/
 #home a:active {background-color: #1e7e34;} /* theGameCrafter color 3*/
-
-/* home gif image */
-#home img {
-    display: block;
-    margin: auto;
-    width: 8em;
-    height: 8em;
-}
 
 /* rules */
 #rules {
@@ -160,7 +160,7 @@ tr:nth-child(3n+1) {color: magenta;}
     color: white;
     text-decoration: none;
     text-align: center;
-    padding: 0.5em;
+    padding: 1em;
     transition: background-color 0.3s ease;   
 }
 
