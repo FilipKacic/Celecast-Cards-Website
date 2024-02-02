@@ -34,6 +34,7 @@ header ul {
 header li {
     float: left;
     width: 25%; /* four html pages */
+    box-sizing: border-box; /* includes padding and border in the total width */
 }
 
 header a {
