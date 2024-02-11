@@ -169,3 +169,8 @@ tr:nth-child(3n+1) {color: magenta;}
     color: white;
     background: gray;
 }
+
+::selection {
+    background-color: cyan;
+    color: black;
+}
