@@ -1,72 +1,111 @@
 :root {
-    /*dark mode destroys some elements*/
-    color-scheme: only light;
-}
+    --shadow: 2px;
+    --space: 10px;
+    --square: 64px;
 
-/* classes */
+    --blink: 0.3s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: "Book Antiqua", serif;
-    color: black;
-    background-color: white;
-    margin: 0;
-    padding: 0;
 }
-
-/* logo */
+/* ---------- header --------- */
+header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 var(--shadow) black;
+    opacity: 0.9;
+}
+/* ----- logo ----- */
 header h1 {
     text-align: center;
-    text-shadow: 0 0 0.1em black;
+    text-shadow: 0 0 var(--shadow) black;
     background: linear-gradient(to right, yellow, cyan, magenta);
-    margin: 0;
-    padding: 1em;
+    padding: var(--shadow);
+    animation-name: hueRotateAnimation;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
 }
-
-/* navigation */
+@keyframes hueRotateAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    /* 50% {
+        filter: hue-rotate(180deg);
+    } */
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+/* ----- navigation ----- */
 header ul {
-    width: 100%;
-    background-color: gray;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: black;
+    margin-bottom: var(--space);
 }
-
-header li {
-    float: left;
-    width: 25%; /* four html pages */
-    box-sizing: border-box; /* includes padding and border in the total width */
+header ul li {
+    padding: var(--space);
+    transition: text-shadow var(--blink) ease-in-out;
 }
-
-header a {
+header ul li a {
     display: block;
-    color: white;
+    color: gray;
     text-decoration: none;
     text-align: center;
-    padding: 1em;
-    transition: background-color 0.3s ease;   
-    overflow: hidden;
+    transition: text-shadow var(--blink) ease-in-out;
+}
+header ul li a:hover, #active {
+    color: white;
+    text-shadow: 0 0 var(--shadow) white;
 }
 
-header a:hover {
-    color: white;
-    background-color: black; 
-}
-
-footer {
-    color: white;
-    text-shadow: 0 0 0.1em black;
+/* -------- footer -------- */
+footer p {
     text-align: center;
-    opacity: 0.3;
+    padding: var(--space) 0;
 }
 
-/* table of cards */
+/* --------- home page --------- */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+/* ----- home gif image ----- */
+#home img {
+    margin: var(--space);
+    width: calc(var(--square)*2);
+    box-shadow: 0 0 var(--shadow) black;
+}
+/* ----- home buy button ----- */
+#home a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    /* align-self: center;
+    justify-self: center; */
+    padding: var(--space) var(--square);
+    border-radius: 0.3rem; /*theGameCrafter button border radius size*/
+    background-color: #bbd329; /* theGameCrafter color 1*/
+    transition: background-color 0.3s ease;
+}
+#home a:hover {background-color: #d0e550;} /* theGameCrafter color 2*/
+#home a:active {background-color: #1e7e34;} /* theGameCrafter color 3*/
+
+/* -------- table of cards --------- */
 table {
-    border: 0.5em solid black;
+    border: var(--shadow) solid black;
     border-collapse: collapse;
     text-align: center;
     background-color: black;
-    margin: 0;
-    padding: 0;
     width: 100%;
     max-width: 100%;
 }
@@ -74,7 +113,6 @@ table {
 th {text-decoration: underline;}
 
 th, td {
-    padding: 0.1em;
     text-align: center;
 }
 
@@ -85,7 +123,6 @@ table img {
 
 th:nth-child(6), td:nth-child(6) {
     text-align: justify;
-    padding-left: 0.5em;
 }
 
 th {color: white}
@@ -94,39 +131,14 @@ tr:nth-child(3n) {color: cyan;}
 tr:nth-child(3n+1) {color: magenta;}
 
 /* ids */
-#active {background-color: black;}
 
-/* home gif image */
-#home img {
-    display: block;
-    margin: 1em auto;
-    width: 8em;
-    height: 8em;
-}
 
-/*buy button*/
-#home a {
-    color: black;
-    background-color: #bbd329; /* theGameCrafter color 1*/
-    border-radius: 0.3rem; /*theGameCrafter button border radius size*/
-    text-align: center;
-    text-decoration: none;   
-    display: block;
-    margin: 1em auto;
-    padding: 1em 2em;
-    width: 8em;
-    transition: background-color 0.3s ease;
-}
-
-#home a:hover {background-color: #d0e550;} /* theGameCrafter color 2*/
-#home a:active {background-color: #1e7e34;} /* theGameCrafter color 3*/
 
 /* rules */
 #rules {
     color: white;
     text-align: justify;
     background-color: black;
-    border: 1em solid black;
 }
 
 #rules h1, h2 {text-align: center;}
@@ -134,7 +146,6 @@ tr:nth-child(3n+1) {color: magenta;}
 #rules a {
     color: white;
     text-decoration: none;
-    padding: 0.5em;
     transition: color 0.3s ease;   
 }
 
@@ -151,8 +162,6 @@ tr:nth-child(3n+1) {color: magenta;}
     width: 100%;
     background-color: black;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
 }
 
@@ -161,7 +170,6 @@ tr:nth-child(3n+1) {color: magenta;}
     color: white;
     text-decoration: none;
     text-align: center;
-    padding: 1em;
     transition: background-color 0.3s ease;   
 }
 
@@ -171,6 +179,5 @@ tr:nth-child(3n+1) {color: magenta;}
 }
 
 ::selection {
-    background-color: cyan;
-    color: black;
+    
 }
