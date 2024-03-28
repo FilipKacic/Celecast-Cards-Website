@@ -72,6 +72,7 @@ footer p {
     text-align: center;
     padding: var(--space) 0;
     color: gray;
+    opacity: 0.5;
 }
 
 /* --------- home page --------- */
@@ -87,6 +88,11 @@ footer p {
     width: calc(var(--square)*2);
     border: var(--shadow) dotted gray;
     box-shadow: 0 0 var(--shadow) black;
+}
+/* ----- home paragraph ----- */
+#home p {
+    margin: var(--space);
+    padding: var(--space);
 }
 /* ----- home buy button ----- */
 #home a {
@@ -124,7 +130,13 @@ table {
 table img {
     width: var(--square);
     height: var(--square);
+    transition: transform var(--blink) ease-in-out, box-shadow var(--blink) ease-in-out;
 }
+/* table img:hover {
+    transition: transform var(--blink) ease-in-out, box-shadow var(--blink) ease-in-out;
+    transform: scale(1.5);
+    box-shadow: 0 0 var(--shadow) black;
+} */
 th {
     text-decoration: underline;
     color: white;
