@@ -4,6 +4,8 @@
     --square: 64px;
 
     --blink: 0.3s;
+    --heartbeat: 1s;
+    --breath: 6s;
 }
 * {
     margin: 0;
@@ -12,6 +14,7 @@
 }
 body {
     font-family: "Book Antiqua", serif;
+    background-color: silver;
 }
 /* ---------- header --------- */
 header {
@@ -25,10 +28,8 @@ header h1 {
     text-align: center;
     text-shadow: 0 0 var(--shadow) black;
     background: linear-gradient(to right, yellow, cyan, magenta);
-    padding: var(--shadow);
-    animation-name: hueRotateAnimation;
-    animation-duration: 9s;
-    animation-iteration-count: infinite;
+    padding: var(--space) 0;
+    animation: hueRotateAnimation var(--breath) ease-in-out infinite;
 }
 @keyframes hueRotateAnimation {
     0% {
@@ -52,24 +53,25 @@ header ul {
 }
 header ul li {
     padding: var(--space);
-    transition: text-shadow var(--blink) ease-in-out;
 }
 header ul li a {
     display: block;
     color: gray;
     text-decoration: none;
     text-align: center;
-    transition: text-shadow var(--blink) ease-in-out;
+    transition: color var(--blink) ease-in-out, text-shadow var(--heartbeat) ease-in-out;
 }
 header ul li a:hover, #active {
     color: white;
     text-shadow: 0 0 var(--shadow) white;
+    transition: color var(--blink) ease-in-out, text-shadow var(--heartbeat) ease-in-out;
 }
 
 /* -------- footer -------- */
 footer p {
     text-align: center;
     padding: var(--space) 0;
+    color: gray;
 }
 
 /* --------- home page --------- */
@@ -83,101 +85,121 @@ footer p {
 #home img {
     margin: var(--space);
     width: calc(var(--square)*2);
+    border: var(--shadow) dotted gray;
     box-shadow: 0 0 var(--shadow) black;
 }
 /* ----- home buy button ----- */
 #home a {
     color: black;
+    text-shadow: 0 0 var(--shadow) black;
     text-decoration: none;
     text-align: center;
-    /* align-self: center;
-    justify-self: center; */
+    margin: var(--space);
     padding: var(--space) var(--square);
-    border-radius: 0.3rem; /*theGameCrafter button border radius size*/
-    background-color: #bbd329; /* theGameCrafter color 1*/
-    transition: background-color 0.3s ease;
+    border-radius: var(--square);
+    background: radial-gradient(ellipse, yellow, cyan, magenta);
+    box-shadow: 0 0 var(--shadow) magenta;
+    animation: hueRotateAnimation var(--breath) ease-in-out infinite;
 }
-#home a:hover {background-color: #d0e550;} /* theGameCrafter color 2*/
-#home a:active {background-color: #1e7e34;} /* theGameCrafter color 3*/
+#home a:hover {
+    background: radial-gradient(ellipse, magenta, cyan, yellow);
+    box-shadow: 0 0 var(--shadow) yellow;
+}
 
 /* -------- table of cards --------- */
+#table-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* word-break: break-all; */
+    overflow-x: auto;
+    margin: var(--space);
+    border: var(--shadow) dotted gray;
+}
 table {
-    border: var(--shadow) solid black;
+    background-color: black;
     border-collapse: collapse;
     text-align: center;
-    background-color: black;
-    width: 100%;
-    max-width: 100%;
 }
-
-th {text-decoration: underline;}
-
-th, td {
-    text-align: center;
-}
-
 table img {
-    width: 4em;
-    height: 4em;
+    width: var(--square);
+    height: var(--square);
 }
-
+th {
+    text-decoration: underline;
+    color: white;
+}
+th, td {
+    border: var(--shadow) solid gray;
+    padding: var(--space) var(--shadow);
+}
+tr:nth-child(3n-1) {color: yellow;}
+tr:nth-child(3n) {color: cyan;}
+tr:nth-child(3n+1) {color: magenta;}
 th:nth-child(6), td:nth-child(6) {
     text-align: justify;
 }
 
-th {color: white}
-tr:nth-child(3n-1) {color: yellow;}
-tr:nth-child(3n) {color: cyan;}
-tr:nth-child(3n+1) {color: magenta;}
-
-/* ids */
-
-
-
 /* rules */
 #rules {
-    color: white;
     text-align: justify;
     background-color: black;
-}
-
-#rules h1, h2 {text-align: center;}
-
-#rules a {
     color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;   
+    margin: var(--space);
+    border: var(--shadow) dotted gray;
+    padding: var(--space);
 }
-
-#rules a:hover {color: red;}
-
-#rules img {
-    display: flex;
-    max-width: 32em;
-    max-height: 32em;
+#rules h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    padding: var(--space);
+}
+#rules h1, h4{
+    color: yellow
+}
+#rules h2, h5 {
+    color: cyan;
+}
+#rules h3, h6 {
+    color: magenta;
+}
+#rules p {
+    margin: var(--space);
+}
+#rules a {
+    color: gray;
+    text-decoration: none;
+    transition: color var(--blink) ease-in-out, text-shadow var(--heartbeat) ease-in-out;
+}
+#rules a:hover {
+    color: white;
+    text-shadow: 0 0 var(--shadow) white;
+    transition: color var(--blink) ease-in-out, text-shadow var(--heartbeat) ease-in-out;
+}
+#rules ul, ol, dl {
+    padding-left: var(--square);
 }
 
 /* contact */
-#contact ul {
-    width: 100%;
-    background-color: black;
-    list-style-type: none;
-    overflow: hidden;
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--space);
+    justify-content: space-around;
 }
-
-#contact a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;   
+#contact img {
+    margin: var(--space);
+    width: var(--square);
+    height: var(--square);
+    transition: transform 0.3s ease, filter var(--blink) ease-in-out;
 }
-
-#contact a:hover {
-    color: white;
-    background: gray;
+#contact img:hover {
+    transform: scale(1.1);
+    filter: invert(100%) drop-shadow(0 0 var(--shadow) black);
+    transition: transform 0.3s ease, filter var(--blink) ease-in-out;
 }
 
 ::selection {
-    
+    color: white;
+    text-shadow: 0 0 var(--shadow) black;
+    background-color: rgba(128, 128, 128, 0.5);   
 }
