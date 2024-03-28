@@ -18,18 +18,21 @@ body {
 }
 /* ---------- header --------- */
 header {
+    display: flex;
+    flex-direction: column;
     position: sticky;
     top: 0;
-    box-shadow: 0 0 var(--shadow) black;
     opacity: 0.9;
+    box-shadow: 0 0 var(--shadow) black;
 }
 /* ----- logo ----- */
 header h1 {
     text-align: center;
     text-shadow: 0 0 var(--shadow) black;
     background: linear-gradient(to right, yellow, cyan, magenta);
-    padding: var(--space) 0;
     animation: hueRotateAnimation var(--breath) ease-in-out infinite;
+    width: 100%;
+    padding: calc(var(--space)*1) 0;
 }
 @keyframes hueRotateAnimation {
     0% {
@@ -49,10 +52,10 @@ header ul {
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: black;
-    margin-bottom: var(--space);
+    width: 100%;
 }
 header ul li {
-    padding: var(--space);
+    padding: calc(var(--space)*1);
 }
 header ul li a {
     display: block;
@@ -85,7 +88,7 @@ footer p {
 /* ----- home gif image ----- */
 #home img {
     margin: var(--space);
-    width: calc(var(--square)*2);
+    width: calc(var(--square)*3);
     border: var(--shadow) dotted gray;
     box-shadow: 0 0 var(--shadow) black;
 }
@@ -214,4 +217,13 @@ th:nth-child(6), td:nth-child(6) {
     color: white;
     text-shadow: 0 0 var(--shadow) black;
     background-color: rgba(128, 128, 128, 0.5);   
+}
+
+@media only screen and (max-width: 1024px) {
+    header h1 {
+        padding: calc(var(--space)*2) 0;
+    }
+    header ul li {
+        padding: calc(var(--space)*2);
+    }
 }
