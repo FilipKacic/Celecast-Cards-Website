@@ -111,6 +111,7 @@ footer p {
     animation: hueRotateAnimation var(--breath) ease-in-out infinite;
 }
 #home a:hover {
+    font-style: italic;
     background: radial-gradient(ellipse, magenta, cyan, yellow);
     box-shadow: 0 0 var(--shadow) yellow;
 }
